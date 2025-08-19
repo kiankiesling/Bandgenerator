@@ -1,5 +1,15 @@
+
+import Controller.BandController;
+import Model.Band;
+import View.BandView;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Band band = new Band();
+        BandView view = new BandView();
+        BandController controller = new BandController(band, view);
+        controller.setInstruments("Guitar, Drums, Bass, Vocals");
+        controller.updateView();
+
     }
 }
