@@ -9,7 +9,7 @@ public class App {
         BandView view = new BandView();
         BandController controller = new BandController(band, view);
         controller.setInstruments("Guitar, Drums, Bass, Vocals");
-        controller.updateView();
+        System.out.println(band.getInstruments());
 
     }
 }
