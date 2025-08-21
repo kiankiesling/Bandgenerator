@@ -7,14 +7,16 @@ import java.awt.event.*;
 public class BandView extends JFrame {
 
     private JButton button;
+    private JLabel label = new JLabel("This Band consists of: ");
 
     public BandView() {
-        setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        setLayout(new GridBagLayout());
         this.setTitle("Bandgenerator");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         button = new JButton("Generate!");
         this.add(button);
+        this.add(label);
         this.pack();
         this.setVisible(true);
 
@@ -25,8 +27,7 @@ public class BandView extends JFrame {
     }
 
     public void updateUI(String instruments) {
-        JLabel label = new JLabel("This Band consists of: " + instruments);
-        this.add(label);
+        label.setText("This Band consists of: " + instruments);
     }
 
 }
