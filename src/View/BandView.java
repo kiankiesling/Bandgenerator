@@ -7,7 +7,8 @@ import java.awt.event.*;
 public class BandView extends JFrame {
 
     private JButton button;
-    private JLabel label = new JLabel("This Band consists of: ");
+    private JLabel BandLabel = new JLabel("This Band consists of: ");
+    private JTextField songKeyTextField;
 
     public BandView() {
         setLayout(new GridBagLayout());
@@ -15,8 +16,10 @@ public class BandView extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         button = new JButton("Generate!");
+        songKeyTextField = new JTextField("key");
         this.add(button);
-        this.add(label);
+        this.add(BandLabel);
+        this.add(songKeyTextField);
         this.pack();
         this.setVisible(true);
 
@@ -27,7 +30,7 @@ public class BandView extends JFrame {
     }
 
     public void updateUI(String instruments) {
-        label.setText("This Band consists of: " + instruments);
+        BandLabel.setText("This Band consists of: " + instruments);
     }
 
 }
