@@ -1,6 +1,6 @@
 package Model;
 
-public class RockBand {
+public class RockBand implements Band {
 
     private String instruments;
 

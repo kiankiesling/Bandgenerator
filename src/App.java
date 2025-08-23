@@ -8,7 +8,6 @@ public class App {
         RockBand band = new RockBand();
         BandView view = new BandView();
         BandController controller = new BandController(band, view);
-        controller.setInstruments("Guitar, Drums, Bass, Vocals");
         System.out.println(band.getInstruments());
 
     }
