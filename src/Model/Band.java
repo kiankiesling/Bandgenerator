@@ -1,18 +1,8 @@
 package Model;
 
-public class Band {
+public interface Band {
+    public String getInstruments();
 
-    private String instruments;
-
-    public Band() {
-    }
-
-    public String getInstruments() {
-        return instruments;
-    }
-
-    public void setInstruments(String instruments) {
-        this.instruments = instruments;
-    }
+    public void setInstruments();
 
 }

@@ -1,11 +1,11 @@
 
 import Controller.BandController;
-import Model.Band;
+import Model.RockBand;
 import View.BandView;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Band band = new Band();
+        RockBand band = new RockBand();
         BandView view = new BandView();
         BandController controller = new BandController(band, view);
         controller.setInstruments("Guitar, Drums, Bass, Vocals");

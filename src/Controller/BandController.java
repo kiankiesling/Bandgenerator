@@ -1,15 +1,15 @@
 package Controller;
 
 import java.awt.event.*;
-import Model.Band;
+import Model.RockBand;
 import View.BandView;
 
 public class BandController implements ActionListener {
 
-    private Band model;
+    private RockBand model;
     private BandView view;
 
-    public BandController(Band model, BandView view) {
+    public BandController(RockBand model, BandView view) {
         this.model = model;
         this.view = view;
         this.view.addButtonListener(this);
