@@ -36,10 +36,6 @@ public class BandView extends JFrame {
 
     }
 
-    // public void addButtonListener(ActionListener l) {
-    // button.addActionListener(l);
-    // }
-
     public JButton getButton() {
         return button;
     }
@@ -55,14 +51,6 @@ public class BandView extends JFrame {
     public JTextField getSongDescriptionTextField() {
         return songDescriptionTextField;
     }
-
-    // public void addSongKeyListener(ActionListener l) {
-    // songKeyTextField.addActionListener(l);
-    // }
-
-    // public void addSongTempoListener(ActionListener l) {
-    // songTempoInBpmTextField.addActionListener(l);
-    // }
 
     public void updateUI(String instruments) {
         BandLabel.setText("This Band consists of: " + instruments);

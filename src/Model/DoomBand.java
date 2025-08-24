@@ -5,7 +5,7 @@ public class DoomBand implements Band {
     private String instruments;
     private Song song;
 
-    public RockBand() {
+    public DoomBand() {
         setInstruments("Guitar, Drums, Bass, Vocals");
         song = new Song("idk", 0, 0, "IDK");
     }
