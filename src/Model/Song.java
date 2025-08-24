@@ -41,7 +41,7 @@ public class Song {
         return songKey;
     }
 
-    public int getTempoInBpm() {
+    public int getSongTempoInBpm() {
         return tempoInBpm;
     }
 }

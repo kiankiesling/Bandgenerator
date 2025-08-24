@@ -8,6 +8,7 @@ public class BandView extends JFrame {
 
     private JButton button;
     private JLabel BandLabel = new JLabel("This Band consists of: ");
+    private JLabel SongLabel = new JLabel("What Song should we play?");
     private JTextField songKeyTextField;
     private JTextField songTempoInBpmTextField;
 
@@ -21,6 +22,7 @@ public class BandView extends JFrame {
         songTempoInBpmTextField = new JTextField("BPM");
         this.add(button);
         this.add(BandLabel);
+        this.add(SongLabel);
         this.add(songKeyTextField);
         this.add(songTempoInBpmTextField);
         this.pack();
@@ -54,6 +56,10 @@ public class BandView extends JFrame {
 
     public void updateUI(String instruments) {
         BandLabel.setText("This Band consists of: " + instruments);
+    }
+
+    public void updateSongBpmUI(String bpm) {
+        SongLabel.setText("At " + bpm + " BPM");
     }
 
 }

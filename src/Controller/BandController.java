@@ -1,6 +1,5 @@
 package Controller;
 
-import java.awt.event.*;
 import Model.*;
 import View.BandView;
 
@@ -32,10 +31,19 @@ public class BandController {
     }
 
     public void onKeyTextField() {
-        view.updateUI(view.getKeyTextField().getText());
+        model.getSong().setSongKey(view.getKeyTextField().getText());
+        view.updateSongBpmUI(model.getSong().getSongKey());
     }
 
     public void onTempoTextField() {
-        view.updateUI(view.getTempoTextField().getText());
+        try {
+            int tempoInInt = Integer.parseInt(view.getTempoTextField().getText());
+            model.getSong().setTempoInBpm(tempoInInt);
+
+            System.out.println("HIER STEHTS!" + Integer.toString(model.getSong().getSongTempoInBpm()));
+            view.updateSongBpmUI(Integer.toString(model.getSong().getSongTempoInBpm()));
+        } catch (NumberFormatException e) {
+            view.updateSongBpmUI("ERROR");
+        }
     }
 }
