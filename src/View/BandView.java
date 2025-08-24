@@ -8,9 +8,12 @@ public class BandView extends JFrame {
 
     private JButton button;
     private JLabel BandLabel = new JLabel("This Band consists of: ");
-    private JLabel SongLabel = new JLabel("What Song should we play?");
+    private JLabel SongKeyLabel = new JLabel("");
+    private JLabel SongTempoLabel = new JLabel("");
+    private JLabel SongDescriptionLabel = new JLabel("");
     private JTextField songKeyTextField;
     private JTextField songTempoInBpmTextField;
+    private JTextField songDescriptionTextField = new JTextField("Description");
 
     public BandView() {
         setLayout(new GridBagLayout());
@@ -22,9 +25,12 @@ public class BandView extends JFrame {
         songTempoInBpmTextField = new JTextField("BPM");
         this.add(button);
         this.add(BandLabel);
-        this.add(SongLabel);
+        this.add(SongKeyLabel);
+        this.add(SongTempoLabel);
+        this.add(SongDescriptionLabel);
         this.add(songKeyTextField);
         this.add(songTempoInBpmTextField);
+        this.add(songDescriptionTextField);
         this.pack();
         this.setVisible(true);
 
@@ -46,6 +52,10 @@ public class BandView extends JFrame {
         return songKeyTextField;
     }
 
+    public JTextField getSongDescriptionTextField() {
+        return songDescriptionTextField;
+    }
+
     // public void addSongKeyListener(ActionListener l) {
     // songKeyTextField.addActionListener(l);
     // }
@@ -59,7 +69,15 @@ public class BandView extends JFrame {
     }
 
     public void updateSongBpmUI(String bpm) {
-        SongLabel.setText("At " + bpm + " BPM");
+        SongTempoLabel.setText("At " + bpm + " BPM");
+    }
+
+    public void updateSongKeyUI(String key) {
+        SongKeyLabel.setText("We play a song in the key of " + key + " ");
+    }
+
+    public void updateSongDescriptionUI(String description) {
+        SongDescriptionLabel.setText(description);
     }
 
 }
