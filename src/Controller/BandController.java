@@ -15,6 +15,7 @@ public class BandController {
         this.view.getTempoTextField().addActionListener(e -> onTempoTextField());
         this.view.getKeyTextField().addActionListener(e -> onKeyTextField());
         this.view.getSongDescriptionTextField().addActionListener(e -> onDescriptionTextArea());
+        this.view.getSongNumberOfChordsTextField().addActionListener(e -> onNumberOfChordsTextArea());
     }
 
     public void setInstruments(String instruments) {
@@ -28,7 +29,7 @@ public class BandController {
 
     public void onButton() {
         System.out.println("HELL YEAH");
-        view.updateUI(model.getInstruments());
+        view.updateUI(model.getGenre());
     }
 
     public void onKeyTextField() {
@@ -43,6 +44,16 @@ public class BandController {
             view.updateSongBpmUI(Integer.toString(model.getSong().getSongTempoInBpm()));
         } catch (NumberFormatException e) {
             view.updateSongBpmUI("ERROR");
+        }
+    }
+
+    public void onNumberOfChordsTextArea() {
+        try {
+            int NumberOfChordsInt = Integer.parseInt(view.getSongNumberOfChordsTextField().getText());
+            model.getSong().setNumberOfChords(NumberOfChordsInt);
+            view.updateNumberOfChordsUI(Integer.toString(model.getSong().getNumberOfChords()));
+        } catch (NumberFormatException e) {
+            view.updateNumberOfChordsUI("ERROR");
         }
     }
 

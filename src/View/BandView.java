@@ -7,12 +7,14 @@ import java.awt.event.*;
 public class BandView extends JFrame {
 
     private JButton button;
-    private JLabel BandLabel = new JLabel("This Band consists of: ");
+    private JLabel BandLabel = new JLabel("Click the generate button, then fill out the form!");
     private JLabel SongKeyLabel = new JLabel("");
     private JLabel SongTempoLabel = new JLabel("");
+    private JLabel SongNumberOfChordsLabel = new JLabel("");
     private JLabel SongDescriptionLabel = new JLabel("");
     private JTextField songKeyTextField;
     private JTextField songTempoInBpmTextField;
+    private JTextField songNumberOfChordsTextField;
     private JTextField songDescriptionTextField = new JTextField("Description");
 
     public BandView() {
@@ -23,13 +25,16 @@ public class BandView extends JFrame {
         button = new JButton("Generate!");
         songKeyTextField = new JTextField("key");
         songTempoInBpmTextField = new JTextField("BPM");
+        songNumberOfChordsTextField = new JTextField("amount of chords");
         this.add(button);
         this.add(BandLabel);
         this.add(SongKeyLabel);
         this.add(SongTempoLabel);
+        this.add(SongNumberOfChordsLabel);
         this.add(SongDescriptionLabel);
         this.add(songKeyTextField);
         this.add(songTempoInBpmTextField);
+        this.add(songNumberOfChordsTextField);
         this.add(songDescriptionTextField);
         this.pack();
         this.setVisible(true);
@@ -48,20 +53,28 @@ public class BandView extends JFrame {
         return songKeyTextField;
     }
 
+    public JTextField getSongNumberOfChordsTextField() {
+        return songNumberOfChordsTextField;
+    }
+
     public JTextField getSongDescriptionTextField() {
         return songDescriptionTextField;
     }
 
-    public void updateUI(String instruments) {
-        BandLabel.setText("This Band consists of: " + instruments);
+    public void updateUI(String genre) {
+        BandLabel.setText("You are in a " + genre + " Band! ");
     }
 
     public void updateSongBpmUI(String bpm) {
-        SongTempoLabel.setText("At " + bpm + " BPM");
+        SongTempoLabel.setText("at " + bpm + " BPM. ");
     }
 
     public void updateSongKeyUI(String key) {
         SongKeyLabel.setText("We play a song in the key of " + key + " ");
+    }
+
+    public void updateNumberOfChordsUI(String numberOfChordsString) {
+        SongNumberOfChordsLabel.setText("It has " + numberOfChordsString + " Chords. ");
     }
 
     public void updateSongDescriptionUI(String description) {
