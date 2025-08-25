@@ -5,7 +5,7 @@ public interface Band {
 
     public String getGenre();
 
-    public void setGenre();
+    public void setGenre(String Genre);
 
     public Song getSong();
 

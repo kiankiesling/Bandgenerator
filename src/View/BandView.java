@@ -16,6 +16,7 @@ public class BandView extends JFrame {
     private JTextField songTempoInBpmTextField;
     private JTextField songNumberOfChordsTextField;
     private JTextField songDescriptionTextField = new JTextField("Description");
+    private PopupFactory popupFactory = new PopupFactory();
 
     public BandView() {
         setLayout(new GridBagLayout());
@@ -62,6 +63,8 @@ public class BandView extends JFrame {
     }
 
     public void updateUI(String genre) {
+        // Popup p = popupFactory.getPopup("You suck", rootPane, EXIT_ON_CLOSE, ABORT);
+        // p.show();
         BandLabel.setText("You are in a " + genre + " Band! ");
     }
 
@@ -74,6 +77,7 @@ public class BandView extends JFrame {
     }
 
     public void updateNumberOfChordsUI(String numberOfChordsString) {
+
         SongNumberOfChordsLabel.setText("It has " + numberOfChordsString + " Chords. ");
     }
 
